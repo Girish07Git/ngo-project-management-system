@@ -4,12 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NGO Project Management System</title>
-  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome (optional but adds icon polish) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ----- global & gradient ----- */
     body {
       background: linear-gradient(135deg, #0d6efd, #198754);
       font-family: 'Segoe UI', Roboto, Arial, sans-serif;
@@ -18,8 +15,6 @@
       display: flex;
       flex-direction: column;
     }
-
-    /* ----- navbar white with soft shadow ----- */
     .navbar {
       background: #ffffff;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -42,13 +37,11 @@
       background: #0d6efd;
       color: #fff;
     }
-
-    /* ----- hero section ----- */
     .hero {
       padding: 60px 20px 50px;
       text-align: center;
       color: white;
-      background: transparent; /* let gradient show through */
+      background: transparent;
     }
     .hero h1 {
       font-weight: 600;
@@ -69,12 +62,12 @@
       box-shadow: 0 20px 35px -6px rgba(0, 0, 0, 0.35);
       border: 2px solid rgba(255,255,255,0.2);
       transition: transform 0.3s ease;
+      background: #2d5a27;
     }
     .hero img:hover {
       transform: scale(1.01);
     }
-
-    /* ----- project cards ----- */
+    
     .project-card {
       border: none;
       border-radius: 24px;
@@ -89,9 +82,11 @@
       box-shadow: 0 24px 40px -12px rgba(0, 0, 0, 0.35);
     }
     .project-card .card-img-top {
-      height: 190px;
+      height: 200px;
       object-fit: cover;
       border-bottom: 1px solid rgba(0,0,0,0.04);
+      background: #2d5a27;
+      width: 100%;
     }
     .project-card .card-body {
       padding: 1.6rem 1.2rem 1.8rem;
@@ -118,8 +113,6 @@
       background: #0f6b42;
       transform: scale(1.02);
     }
-
-    /* ----- section title ----- */
     .section-title {
       color: white;
       font-weight: 600;
@@ -141,8 +134,6 @@
       border-radius: 4px;
       opacity: 0.6;
     }
-
-    /* ----- footer ----- */
     footer {
       background: #0b1a1e;
       color: #d4e0e6;
@@ -158,7 +149,6 @@
       margin: 0 4px;
     }
 
-    /* small tweaks for mobile */
     @media (max-width: 576px) {
       .hero h1 {
         font-size: 2.1rem;
@@ -173,8 +163,6 @@
   </style>
 </head>
 <body>
-
-<!-- ====== NAVIGATION ====== -->
 <nav class="navbar navbar-expand-lg shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">
@@ -191,32 +179,31 @@
   </div>
 </nav>
 
-<!-- ====== HERO ====== -->
 <div class="hero">
   <div class="container">
-    <h1>Welcome to NGO Project Management</h1>
+    <h1>🌿 Welcome to NGO Project Management</h1>
     <p class="lead">Empower change · Streamline impact · Manage NGO projects effortlessly</p>
     <img 
-      src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop" 
-      alt="NGO team collaborating" 
+      src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=450&fit=crop&crop=center" 
+      alt="NGO helping community" 
       class="img-fluid mt-3"
+      onerror="this.src='https://picsum.photos/seed/ngo/800/450'"
     >
   </div>
 </div>
 
-<!-- ====== PROJECT CARDS ====== -->
 <div class="container mb-2">
-  <h2 class="text-center mb-5 section-title">Our Projects</h2>
+  <h2 class="text-center mb-5 section-title">🌳 Our Projects</h2>
 
   <div class="row g-4">
-
-    <!-- Card 1 : Education -->
+    <!-- Education Program -->
     <div class="col-md-4">
       <div class="card project-card">
         <img 
-          src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop&crop=center" 
           class="card-img-top" 
           alt="Children learning in classroom"
+          onerror="this.src='https://picsum.photos/seed/education/600/400'"
         >
         <div class="card-body d-flex flex-column">
           <h5><i class="fas fa-book-open me-2 text-success"></i>Education Program</h5>
@@ -228,13 +215,14 @@
       </div>
     </div>
 
-    <!-- Card 2 : Health Camp -->
+    <!-- Health Camp -->
     <div class="col-md-4">
       <div class="card project-card">
         <img 
-          src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?w=600&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=400&fit=crop&crop=center" 
           class="card-img-top" 
           alt="Medical camp in rural village"
+          onerror="this.src='https://picsum.photos/seed/health/600/400'"
         >
         <div class="card-body d-flex flex-column">
           <h5><i class="fas fa-heartbeat me-2 text-danger"></i>Health Camp</h5>
@@ -246,13 +234,14 @@
       </div>
     </div>
 
-    <!-- Card 3 : Tree Plantation -->
+    <!-- Tree Plantation -->
     <div class="col-md-4">
       <div class="card project-card">
         <img 
-          src="https://images.unsplash.com/photo-1469571486292-b53601010376?w=600&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=400&fit=crop&crop=center" 
           class="card-img-top" 
           alt="Tree plantation drive"
+          onerror="this.src='https://picsum.photos/seed/tree/600/400'"
         >
         <div class="card-body d-flex flex-column">
           <h5><i class="fas fa-tree me-2 text-success"></i>Tree Plantation</h5>
@@ -263,21 +252,20 @@
         </div>
       </div>
     </div>
+  </div> 
+</div> 
 
-  </div> <!-- /row -->
-</div> <!-- /container -->
-
-<!-- ====== FOOTER ====== -->
 <footer>
   <div class="container">
     <i class="fas fa-hand-holding-heart"></i> 
     © 2026 NGO Project Management System 
     <span class="mx-2">•</span> 
-    <i class="fas fa-leaf"></i> built with purpose
+    <i class="fas fa-leaf"></i> 
+    <span class="mx-2">•</span>
+    <i class="fas fa-tree"></i>
   </div>
 </footer>
 
-<!-- Bootstrap JS (optional for some interactions, but not required) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
