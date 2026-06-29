@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Our Projects</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#f4f7fa;
+        }
+
+        .navbar{
+            background:#198754;
+        }
+
+        .navbar-brand{
+            color:white;
+            font-weight:bold;
+        }
+
+        .card{
+            border-radius:20px;
+            transition:.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+        }
+
+        .status{
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="container">
+
+<a class="navbar-brand" href="/dashboard">
+
+🌍 NGO Project Management
+
+</a>
+
+<a href="/dashboard" class="btn btn-light">
+
+Dashboard
+
+</a>
+
+</div>
+
+</nav>
+
+<div class="container mt-5">
+
+<h2 class="text-center mb-5">
+
+Our Projects
+
+</h2>
+
+<div class="row">
+
+{% for project in projects %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow">
+
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
+class="card-img-top"
+height="220">
+
+<div class="card-body">
+
+<h4>
+
+{{ project[1] }}
+
+</h4>
+
+<p>
+
+{{ project[2] }}
+
+</p>
+
+<p>
+
+📍 <b>Location :</b>
+
+{{ project[6] }}
+
+</p>
+
+<p>
+
+📅 {{ project[4] }}
+
+to
+
+{{ project[5] }}
+
+</p>
+
+<p class="status text-success">
+
+Status :
+
+{{ project[3] }}
+
+</p>
+
+<a href="/project-details"
+
+class="btn btn-success w-100">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>

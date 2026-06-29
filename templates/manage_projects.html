@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Manage Projects</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:linear-gradient(135deg,#0d6efd,#198754);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .card{
+            width:650px;
+            border-radius:20px;
+            padding:30px;
+            animation:fade .8s;
+        }
+
+        @keyframes fade{
+
+            from{
+                opacity:0;
+                transform:translateY(50px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card shadow">
+
+<h2 class="text-center mb-4">
+
+📁 Manage NGO Projects
+
+</h2>
+
+<form method="POST">
+
+<label class="form-label">
+Project Title
+</label>
+
+<input
+type="text"
+name="title"
+class="form-control mb-3"
+required>
+
+<label class="form-label">
+Description
+</label>
+
+<textarea
+name="description"
+class="form-control mb-3"
+rows="4"
+required></textarea>
+
+<label class="form-label">
+Project Status
+</label>
+
+<select
+name="status"
+class="form-select mb-3">
+
+<option>Ongoing</option>
+
+<option>Completed</option>
+
+<option>Upcoming</option>
+
+</select>
+
+<label class="form-label">
+Start Date
+</label>
+
+<input
+type="date"
+name="start_date"
+class="form-control mb-3">
+
+<label class="form-label">
+End Date
+</label>
+
+<input
+type="date"
+name="end_date"
+class="form-control mb-3">
+
+<label class="form-label">
+Location
+</label>
+
+<input
+type="text"
+name="location"
+class="form-control mb-4">
+
+<button
+class="btn btn-success w-100">
+
+Save Project
+
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+
+<button class="btn btn-secondary w-100">
+
+Back Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</body>
+</html>

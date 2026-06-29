@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Manage Project Images</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:linear-gradient(135deg,#0d6efd,#198754);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .card{
+            width:550px;
+            padding:35px;
+            border-radius:20px;
+            animation:slideUp .8s ease;
+        }
+
+        @keyframes slideUp{
+
+            from{
+                opacity:0;
+                transform:translateY(50px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card shadow">
+
+<h2 class="text-center mb-4">
+
+🖼️ Manage Project Images
+
+</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<label class="form-label">
+
+Select Project
+
+</label>
+
+<select
+name="project_id"
+class="form-select mb-3">
+
+<option>Project 1</option>
+
+<option>Project 2</option>
+
+<option>Project 3</option>
+
+</select>
+
+<label class="form-label">
+
+Upload Image
+
+</label>
+
+<input
+type="file"
+name="image"
+class="form-control mb-4">
+
+<button
+class="btn btn-success w-100">
+
+Upload Image
+
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+
+<button
+class="btn btn-secondary w-100">
+
+Back Dashboard
+
+</button>
+
+</a>
+
+</div>
+
+</body>
+</html>

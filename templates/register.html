@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Register</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            background:linear-gradient(135deg,#0d6efd,#198754);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .card{
+            width:420px;
+            padding:35px;
+            border-radius:20px;
+            animation:slideUp .8s ease;
+        }
+
+        @keyframes slideUp{
+            from{
+                opacity:0;
+                transform:translateY(60px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card shadow">
+
+<h2 class="text-center mb-4">
+📝 Register
+</h2>
+
+<form method="POST">
+
+<input
+type="text"
+name="full_name"
+class="form-control mb-3"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+name="email"
+class="form-control mb-3"
+placeholder="Email"
+required>
+
+<input
+type="password"
+name="password"
+class="form-control mb-3"
+placeholder="Password"
+required>
+
+<select
+name="role"
+class="form-select mb-3">
+
+<option>User</option>
+<option>Admin</option>
+
+</select>
+
+<button
+class="btn btn-success w-100">
+
+Create Account
+
+</button>
+
+</form>
+
+<div class="text-center mt-3">
+
+Already have an account?
+
+<a href="/login">
+
+Login
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
