@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Manage Media</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-success">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="/dashboard">
+NGO Project Management
+</a>
+
+<a href="/media" class="btn btn-light">
+Media Page
+</a>
+
+</div>
+
+</nav>
+
+<div class="container mt-5">
+
+<div class="card shadow p-4">
+
+<h2 class="text-center mb-4">
+Add New Media
+</h2>
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label class="form-label">
+Media Title
+</label>
+
+<input
+type="text"
+name="title"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+Category
+</label>
+
+<select
+name="category"
+class="form-select">
+
+<option>Press Release</option>
+
+<option>Media Coverage</option>
+
+<option>Image Gallery</option>
+
+<option>Video</option>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+Description
+</label>
+
+<textarea
+name="description"
+class="form-control"
+rows="4"></textarea>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+Image URL
+</label>
+
+<input
+type="text"
+name="image_url"
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">
+Video URL
+</label>
+
+<input
+type="text"
+name="video_url"
+class="form-control">
+
+</div>
+
+<button class="btn btn-success w-100">
+Save Media
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

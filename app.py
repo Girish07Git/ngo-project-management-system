@@ -45,8 +45,50 @@ CREATE TABLE IF NOT EXISTS project_images(
 """)
 
 connection.commit()
+# Media Table
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS media(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    category TEXT,
+    description TEXT,
+    image_url TEXT,
+    video_url TEXT
+)
+""")
+
+connection.commit()
 
 
+# Manage Media
+@app.route("/manage-media", methods=["GET", "POST"])
+def manage_media():
+
+    if request.method == "POST":
+
+        title = request.form["title"]
+        category = request.form["category"]
+        description = request.form["description"]
+        image_url = request.form["image_url"]
+        video_url = request.form["video_url"]
+
+        cursor.execute("""
+        INSERT INTO media
+        (title,category,description,image_url,video_url)
+        VALUES(?,?,?,?,?)
+        """, (
+            title,
+            category,
+            description,
+            image_url,
+            video_url
+        ))
+
+        connection.commit()
+
+        return redirect("/media")
+
+    return render_template("manage_media.html")
 # Home
 @app.route("/")
 def home():
@@ -254,11 +296,85 @@ def delete_project(id):
     connection.commit()
 
     return redirect("/projects")
+
 # Project Details
 @app.route("/project-details")
 def project_details():
 
     return render_template("project_details.html")
+
+
+# Media Page
+@app.route("/media")
+def media():
+
+    cursor.execute("SELECT * FROM media")
+    media_list = cursor.fetchall()
+
+    return render_template(
+        "media.html",
+        media_list=media_list
+    )
+
+
+# Edit Media
+@app.route("/edit-media/<int:id>", methods=["GET", "POST"])
+def edit_media(id):
+
+    if request.method == "POST":
+
+        title = request.form["title"]
+        category = request.form["category"]
+        description = request.form["description"]
+        image_url = request.form["image_url"]
+        video_url = request.form["video_url"]
+
+        cursor.execute("""
+        UPDATE media
+        SET title=?,
+            category=?,
+            description=?,
+            image_url=?,
+            video_url=?
+        WHERE id=?
+        """, (
+            title,
+            category,
+            description,
+            image_url,
+            video_url,
+            id
+        ))
+
+        connection.commit()
+
+        return redirect("/media")
+
+    cursor.execute(
+        "SELECT * FROM media WHERE id=?",
+        (id,)
+    )
+
+    media = cursor.fetchone()
+
+    return render_template(
+        "edit_media.html",
+        media=media
+    )
+
+
+# Delete Media
+@app.route("/delete-media/<int:id>")
+def delete_media(id):
+
+    cursor.execute(
+        "DELETE FROM media WHERE id=?",
+        (id,)
+    )
+
+    connection.commit()
+
+    return redirect("/media")
 # Logout
 @app.route("/logout")
 def logout():

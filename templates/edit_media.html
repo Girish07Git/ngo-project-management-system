@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Edit Media</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+
+<div class="card shadow p-4">
+
+<h2 class="text-center mb-4">
+Edit Media
+</h2>
+
+<form method="POST">
+
+<label>Title</label>
+
+<input
+type="text"
+name="title"
+class="form-control mb-3"
+value="{{ media[1] }}"
+required>
+
+<label>Category</label>
+
+<input
+type="text"
+name="category"
+class="form-control mb-3"
+value="{{ media[2] }}"
+required>
+
+<label>Description</label>
+
+<textarea
+name="description"
+class="form-control mb-3"
+rows="4">{{ media[3] }}</textarea>
+
+<label>Image URL</label>
+
+<input
+type="text"
+name="image_url"
+class="form-control mb-3"
+value="{{ media[4] }}">
+
+<label>Video URL</label>
+
+<input
+type="text"
+name="video_url"
+class="form-control mb-3"
+value="{{ media[5] }}">
+
+<button class="btn btn-success w-100">
+Update Media
+</button>
+
+</form>
+
+<br>
+
+<a href="/media" class="btn btn-secondary w-100">
+Back
+</a>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
